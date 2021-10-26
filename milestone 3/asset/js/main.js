@@ -121,15 +121,11 @@ function colorPicker(icon) {
 }
 
 function filterIcons() {
-
     document.querySelector(".cards").innerHTML = "";
     icon_type = document.getElementById("type").value;
-
     let iconsCopy = icons.filter(filtering);
-
     iconsCopy.forEach((icon, i, array) => {
         let icon_color = colorPicker(icon);
-
         const uppercaseName = icon.name.toUpperCase();
         const element = `
     <div class="card ${icon_color}">
@@ -143,19 +139,12 @@ function filterIcons() {
 }
 
 function filtering(filtered) {
-    //console.log(filtered.type);
-    //console.log(icon_type);
 
     if (filtered.type == icon_type) {
-        console.log(true)
         return true;
     } else if (icon_type == "all") {
-        console.log(true)
-
         return true;
     } else {
-        console.log(filtered.type, icon_type)
-
         return false;
     }
 }
