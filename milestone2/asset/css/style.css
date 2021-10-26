@@ -37,3 +37,15 @@ body {
     border-radius: 15px;
     box-shadow: 1px 1px black;
 }
+
+.icon_blue>i {
+    color: blue;
+}
+
+.icon_orange>i {
+    color: orange;
+}
+
+.icon_purple>i {
+    color: purple;
+}

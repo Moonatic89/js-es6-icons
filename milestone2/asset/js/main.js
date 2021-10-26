@@ -110,12 +110,24 @@ const icons = [
 
 
 icons.forEach((icon, i, array) => {
+    let icon_color = colorPicker(icon);
+
     const uppercaseName = icon.name.toUpperCase();
     const element = `
-    <div class="card">
+    <div class="card ${icon_color}">
     <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
     <p>${uppercaseName}</p>
     </div>
     `
     document.querySelector(".cards").insertAdjacentHTML("beforeend", element)
 })
+
+function colorPicker(icon) {
+    if (icon.type == "animal") {
+        return "icon_blue";
+    } else if (icon.type == "vegetable") {
+        return "icon_orange";
+    } else {
+        return "icon_purple";
+    }
+}
