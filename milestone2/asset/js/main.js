@@ -108,20 +108,8 @@ const icons = [
     }
 ];
 
-/* FOREACH
-icons.forEach((icon, i, array) => {
-    let icon_color = colorPicker(icon);
-
-    const uppercaseName = icon.name.toUpperCase();
-    const element = `
-    <div class="card ${icon_color}">
-    <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
-    <p>${uppercaseName}</p>
-    </div>
-    `
-    document.querySelector(".cards").insertAdjacentHTML("beforeend", element)
-})
-*/
+let icon_type = document.getElementById("type").value;
+filterIcons();
 function colorPicker(icon) {
     if (icon.type == "animal") {
         return "icon_blue";
@@ -134,12 +122,12 @@ function colorPicker(icon) {
 
 function filterIcons() {
 
-    let icon_type = document.querySelector("type");
-    icons.filter((filtering), icon_type)
+    document.querySelector(".cards").innerHTML = "";
+    icon_type = document.getElementById("type").value;
 
+    let iconsCopy = icons.filter(filtering);
 
-
-    icons.forEach((icon, i, array) => {
+    iconsCopy.forEach((icon, i, array) => {
         let icon_color = colorPicker(icon);
 
         const uppercaseName = icon.name.toUpperCase();
@@ -155,6 +143,19 @@ function filterIcons() {
 }
 
 function filtering(filtered) {
-    return filtered.type
+    //console.log(filtered.type);
+    //console.log(icon_type);
 
+    if (filtered.type == icon_type) {
+        console.log(true)
+        return true;
+    } else if (icon_type == "all") {
+        console.log(true)
+
+        return true;
+    } else {
+        console.log(filtered.type, icon_type)
+
+        return false;
+    }
 }
