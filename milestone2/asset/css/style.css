@@ -19,6 +19,15 @@ body {
     color: #29B1DD;
 }
 
+.filterSelector {
+    background-color: #29B1DD;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
