@@ -18,3 +18,22 @@ body {
 .title>h1 {
     color: #29B1DD;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: white;
+    width: calc(100% / 7);
+    height: 100px;
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 1px 1px black;
+}

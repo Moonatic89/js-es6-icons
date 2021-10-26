@@ -108,11 +108,13 @@ const icons = [
     }
 ];
 
+
 icons.forEach((icon, i, array) => {
+    const uppercaseName = icon.name.toUpperCase();
     const element = `
     <div class="card">
-    <i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-    <p>${icon.name}</p>
+    <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
+    <p>${uppercaseName}</p>
     </div>
     `
     document.querySelector(".cards").insertAdjacentHTML("beforeend", element)
